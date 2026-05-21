@@ -255,6 +255,8 @@ pgwatch:
     # When false (default): the custom Deployment runs exactly as before.
     useSubchart: false
     image: grafana/grafana:12.4.0-21419697389 # Dashboards are prepared for grafana v12
+    # -- Resource requests and limits for the Grafana deployment.
+    resources: {}
     enableGrafana: true
     # -- Controls which Grafana datasources are provisioned.
     # Independent of the sink settings (enablePgSink / enablePromSink), which control
