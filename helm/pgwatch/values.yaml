@@ -205,11 +205,16 @@ pgwatch:
     newPrometheus:
       createPrometheus: true
       image: "prom/prometheus:main"
+      # -- Resource requests and limits for the Prometheus deployment.
+      resources: {}
       settings:
         retentionDays: 31
       volume:
         size: '10Gi'
         storageClass: 'standard'
+      # -- Resource requests and limits for the Prometheus initContainers.
+      initContainers:
+        resources: {}
 
     # -- Existing Prometheus instance — active when createPrometheus: false.
     #
