@@ -28,13 +28,10 @@ spec:
         - name: PGDATA
           value: /pgdata/data
         image: {{ (include "pgwatch.postgres.newPgDatabase.image" .) }}
+        {{- with .Values.pgwatch.postgres.newPgDatabase.initContainers.resources }}
         resources:
-          requests:
-            cpu: "10m"
-            memory: "16Mi"
-          limits:
-            cpu: "100m"
-            memory: "64Mi"
+          {{- toYaml . | nindent 10 }}
+        {{- end }}
         command:
         - /bin/sh
         - -c

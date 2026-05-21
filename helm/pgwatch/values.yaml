@@ -135,6 +135,9 @@ pgwatch:
       # -- Resource requests and limits for the Metrics Database init job.
       DbInitJob:
         resources: {}
+      # -- Resource requests and limits for the Metrics Database initContainers.
+      initContainers:
+        resources: {}
 
     # -- External database connection (active when createMetricDatabase: false).
     # Set credentials via credentials.* below; username/password here are deprecated.
