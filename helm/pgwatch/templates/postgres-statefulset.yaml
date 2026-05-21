@@ -58,6 +58,10 @@ spec:
       - name: postgres
         {{- include "pgwatch.containerSecurityContext" (dict "global" .Values.securityContext "component" .Values.pgwatch.postgres.securityContext) | nindent 8 }}
         image: {{ (include "pgwatch.postgres.newPgDatabase.image" .) }}
+        {{- with .Values.pgwatch.postgres.newPgDatabase.resources }}
+        resources:
+          {{- toYaml . | nindent 10 }}
+        {{- end }}
         ports:
         - containerPort: 5432
           name: postgres

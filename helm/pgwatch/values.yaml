@@ -127,6 +127,8 @@ pgwatch:
     # -- New PostgreSQL instance — active when createMetricDatabase: true.
     newPgDatabase:
       image: "docker.io/postgres:18.3-alpine3.23"
+      # -- Resource requests and limits for the Metrics Database StatefulSet.
+      resources: {}
       volume:
         size: '10Gi'
         storageClass: 'standard'
