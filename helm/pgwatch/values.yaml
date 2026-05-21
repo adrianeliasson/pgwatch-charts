@@ -132,6 +132,9 @@ pgwatch:
       volume:
         size: '10Gi'
         storageClass: 'standard'
+      # -- Resource requests and limits for the Metrics Database init job.
+      DbInitJob:
+        resources: {}
 
     # -- External database connection (active when createMetricDatabase: false).
     # Set credentials via credentials.* below; username/password here are deprecated.
