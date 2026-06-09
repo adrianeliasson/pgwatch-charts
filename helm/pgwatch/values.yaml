@@ -133,7 +133,7 @@ pgwatch:
         size: '10Gi'
         storageClass: 'standard'
       # -- Resource requests and limits for the Metrics Database init job.
-      DbInitJob:
+      dbInitJob:
         resources: {}
       # -- Resource requests and limits for the Metrics Database initContainers.
       initContainers:
